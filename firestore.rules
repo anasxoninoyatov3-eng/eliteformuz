@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function admin() { return request.auth != null && request.auth.token.email == 'anasxoninoyatov3@gmail.com'; }
+    function own(e) { return request.auth != null && request.auth.token.email == e; }
+    match /gym_users/{e} {
+      allow read: if own(e) || admin();
+      allow write: if admin() || (own(e) && !request.resource.data.diff(resource == null ? {} : resource.data).affectedKeys().hasAny(['subUntil','subPlan']));
+    }
+    match /gym_bookings/{id} {
+      allow read: if admin() || (request.auth != null && resource.data.userEmail == request.auth.token.email);
+      allow create: if own(request.resource.data.userEmail);
+      allow update: if admin() || own(resource.data.userEmail);
+    }
+    match /gym_sub_requests/{id} {
+      allow create: if own(request.resource.data.email) && request.resource.data.status == 'pending';
+      allow read, update: if admin();
+    }
+  }
+}

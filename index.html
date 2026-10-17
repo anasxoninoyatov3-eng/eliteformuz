@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="EliteForm Fitness - Gravitatsiyani unuting va tanangizni his qiling. Maxsus havo yogasi va fitness markazi." />
+  <title>EliteForm Fitness — online fitness va obuna</title>
+  <!-- Fonts: Archivo / Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="./css/theme.css" />
+</head>
+
+<body>
+  <!-- Background Decor Elements -->
+  <div class="bg-glow glow-blue"></div>
+  <div class="bg-glow glow-violet"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo"><i class="logo-icon fa-solid fa-dumbbell"></i>
+        EliteForm<span class="text-accent">FITNESS</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">Biz haqimizda</a></li>
+        <li><a href="#directions">Yoʻnalishlar</a></li>
+        <li><a href="#schedule">Jadval</a></li>
+        <li><a href="#programs">Dasturlar</a></li>
+        <li><a href="#subscription">Obuna</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-outline" id="btn-login">Kabinet</button>
+        <button class="btn btn-primary" id="btn-hero-cta" onclick="location.hash='subscription'">Obuna</button>
+      </div>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero glass-panel" id="home">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge glow-badge">Online fitness · obuna asosida</div>
+        <h1 class="hero-title">Mashq. Ovqat.<br /><span class="text-glow">Natija.</span></h1>
+        <p class="hero-desc">Murabbiylar tuzgan mashq dasturlari, maqsadingizga mos ovqat rejalari va haftalik dars
+          jadvali. Bitta obuna bilan hammasi sizniki.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary btn-large glow-btn" id="btn-primary-cta"
+            onclick="location.hash='subscription'">
+            Obunani tanlash
+          </button>
+          <button class="btn btn-outline btn-large" id="btn-ai-guide"><i class="fa-solid fa-robot"></i>
+            AI Dars Tanlash
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div><b>3</b><span>maqsad: ozish, massa, shakl</span></div>
+          <div><b>4 hafta</b><span>to'liq dars jadvali</span></div>
+          <div><b>AI</b><span>shaxsiy murabbiy</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div id="hero-demo" class="tile demo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container fade-in">
+      <h2 class="section-title">EliteForm nima o'zi?</h2>
+      <div class="about-grid">
+        <div class="about-card glass-panel">
+          <div class="icon-wrap glow-blue-icon"><i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Xavfsizlik</h3>
+          <p>
+            Maxsus hamaklar yordamida bo'g'imlar va umurtqaga tushuvchi
+            ortiqcha yuklama nolga tushadi.
+          </p>
+        </div>
+        <div class="about-card glass-panel">
+          <div class="icon-wrap glow-violet-icon"><i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3>Moslashuvchanlik</h3>
+          <p>
+            Orqa miya dekompressiyasi qon aylanishini va mushaklar tonusini
+            keskin yaxshilaydi.
+          </p>
+        </div>
+        <div class="about-card glass-panel">
+          <div class="icon-wrap glow-green-icon"><i class="fa-solid fa-spa"></i>
+          </div>
+          <h3>Ruhiy xotirjamlik</h3>
+          <p>
+            Havoda parvoz qilish meditatsiya holatiga kirishga yordam beradi
+            va stressni yengadi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directions Section -->
+  <section class="directions" id="directions">
+    <div class="container fade-in">
+      <h2 class="section-title text-center">Bizning Yo'nalishlar</h2>
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="dir-card glass-panel group">
+          <div class="card-image-wrap">
+            <svg width="100%" height="200" viewBox="0 0 400 200" preserveAspectRatio="none">
+              <rect width="400" height="200" fill="#141C2E" />
+              <path d="M0,100 Q100,50 200,100 T400,100" fill="none" stroke="#FF6A3D" stroke-width="3"
+                filter="drop-shadow(0 0 8px #FF6A3D)" />
+              <circle cx="200" cy="100" r="40" fill="none" stroke="#FF6A3D" stroke-width="2" />
+              <text x="200" y="105" fill="#fff" font-size="20" font-family="Archivo" text-anchor="middle">
+                YOGA
+              </text>
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3>EliteForm Yoga</h3>
+            <p>
+              Chuqur cho'zilish va meditatsiya orqali tana va ong muvozanatini
+              topish. Orqa bloklarni yechish uchun ideal.
+            </p>
+            <button class="link-btn">
+              Batafsil
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="dir-card glass-panel group border-violet">
+          <div class="card-image-wrap">
+            <svg width="100%" height="200" viewBox="0 0 400 200" preserveAspectRatio="none">
+              <rect width="400" height="200" fill="#141C2E" />
+              <path d="M0,150 L100,50 L200,150 L300,50 L400,150" fill="none" stroke="#8FB8FF" stroke-width="3"
+                filter="drop-shadow(0 0 8px #8FB8FF)" />
+              <circle cx="200" cy="100" r="40" fill="none" stroke="#8FB8FF" stroke-width="2" />
+              <text x="200" y="105" fill="#fff" font-size="20" font-family="Archivo" text-anchor="middle">
+                FITNESS
+              </text>
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3>EliteForm Fitness</h3>
+            <p>
+              Kuch, portlash kuchi va chidamlilikni oshirish. Qorin va bel
+              muskullarini havodagi qarshilik orqali rivojlantiring.
+            </p>
+            <button class="link-btn text-violet">
+              Batafsil
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="dir-card glass-panel group border-green">
+          <div class="card-image-wrap">
+            <svg width="100%" height="200" viewBox="0 0 400 200" preserveAspectRatio="none">
+              <rect width="400" height="200" fill="#141C2E" />
+              <path d="M0,100 C100,150 150,50 200,100 S300,50 400,100" fill="none" stroke="#7CD696" stroke-width="3"
+                filter="drop-shadow(0 0 8px #7CD696)" />
+              <circle cx="200" cy="100" r="40" fill="none" stroke="#7CD696" stroke-width="2" />
+              <text x="200" y="105" fill="#fff" font-size="20" font-family="Archivo" text-anchor="middle">
+                KIDS
+              </text>
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3>EliteForm Kids</h3>
+            <p>
+              Bolalar uchun xavfsiz va qiziqarli mashg'ulotlar. O'yin orqali
+              tanani qotirish, akrobatik qobiliyatlarni o'stirish.
+            </p>
+            <button class="link-btn text-green">
+              Batafsil
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Section - 1 OYLIK -->
+  <section class="schedule" id="schedule">
+    <div class="container fade-in">
+      <div class="schedule-header">
+        <h2 class="section-title"><i class="fa-solid fa-calendar-days"></i> 1 Oylik Darslar Jadvali</h2>
+        <div class="schedule-legend">
+          <span class="legend-item"><span class="leg-dot" style="background: #ff6b6b"></span>Kardio</span>
+          <span class="legend-item"><span class="leg-dot" style="background: #FF6A3D"></span>Kuch</span>
+          <span class="legend-item"><span class="leg-dot" style="background: #b06bff"></span>Yoga</span>
+          <span class="legend-item"><span class="leg-dot" style="background: #8e92a3"></span>Dam</span>
+        </div>
+      </div>
+      <div id="monthly-schedule-container" class="monthly-schedule-wrap">
+        <!-- JS schedule.js tomonidan to'ldiriladi -->
+        <div class="loading-schedule">
+          <div class="loading-spinner"></div>
+          <p>Jadval yuklanmoqda...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dasturlar -->
+  <section id="programs">
+    <div class="container fade-in">
+      <h2 class="section-title">Mashq va ovqat dasturlari</h2>
+      <div id="programs-container"></div>
+    </div>
+  </section>
+
+  <!-- Obuna (Подписка) -->
+  <section id="subscription">
+    <div class="container fade-in">
+      <h2 class="section-title text-center">Obuna</h2>
+      <div class="sub-grid">
+        <div class="sub-card glass-panel">
+          <h4>1 oy</h4>
+          <div class="price">199 000 <span>so'm</span></div>
+          <div class="save">&nbsp;</div><button class="btn btn-outline w-100 btn-sub" data-plan="month">Obunani
+            olish</button>
+        </div>
+        <div class="sub-card glass-panel best">
+          <h4>3 oy</h4>
+          <div class="price">499 000 <span>so'm</span></div>
+          <div class="save">Oyiga 166 000 — 16% tejaysiz</div><button class="btn glow-btn w-100 btn-sub"
+            data-plan="quarter">Obunani olish</button>
+        </div>
+        <div class="sub-card glass-panel">
+          <h4>12 oy</h4>
+          <div class="price">1 590 000 <span>so'm</span></div>
+          <div class="save">Oyiga 132 500 — 33% tejaysiz</div><button class="btn btn-outline w-100 btn-sub"
+            data-plan="year">Obunani olish</button>
+        </div>
+      </div>
+      <ul class="sub-perks">
+        <li>Barcha mashq dasturlari (4 kunlik bo'linma)</li>
+        <li>Haftalik ovqat rejalari</li>
+        <li>Dars jadvaliga yozilish va eslatmalar</li>
+        <li>AI murabbiy bilan cheksiz suhbat</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer border-top glass-panel">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#" class="logo"><i class="logo-icon fa-solid fa-dumbbell"></i>
+          ELITE<span class="text-accent">FORM</span>
+        </a>
+        <p>
+          O'zbekistondagi birinchi yuqori texnologik EliteForm Yoga va Fitness
+          zali.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Menyular</h4>
+        <ul>
+          <li><a href="#about">Biz haqimizda</a></li>
+          <li><a href="#directions">Yo'nalishlar</a></li>
+          <li><a href="#schedule">Jadval</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Aloqa</h4>
+        <p>+998 90 852 77 75</p>
+        <div class="social-icons">
+          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <!-- Telegram Icon -->
+          <a href="#" class="social-link"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 EliteForm. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- Registration / Auth Modal -->
+  <div class="modal" id="reg-modal">
+    <div class="modal-content glass-panel text-center">
+      <button class="close-modal">&times;</button>
+      <h3 class="modal-title">Xush kelibsiz!</h3>
+      <p>
+        Ro'yxatdan o'tish yoki tizimga kirish uchun Google hisobingizdan
+        foydalaning.
+      </p>
+
+      <div style="display: flex; justify-content: center; margin-top: 20px">
+        <!-- Custom Google Sign-In Button -->
+        <button class="btn btn-google" id="custom-google-btn">
+          <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+              fill="#4285F4" />
+            <path
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+              fill="#34A853" />
+            <path
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+              fill="#FBBC05" />
+            <path
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+              fill="#EA4335" />
+          </svg>
+          Google orqali kiring
+        </button>
+      </div>
+
+      <p class="text-sm text-gray" style="margin-top: 20px">
+        Tizimga kirish orqali siz ommaviy ofertaga rozilik bildirasiz.
+      </p>
+    </div>
+  </div>
+
+  <!-- AI Lesson Guide Modal -->
+  <div class="modal" id="ai-modal">
+    <div class="modal-content glass-panel border-violet ai-modal-wide">
+      <button class="close-modal">&times;</button>
+      <h3 class="modal-title text-violet"><i class="fa-solid fa-robot"></i>
+        AI Fitness Murabbiy
+      </h3>
+      <p>
+        Bo'yingiz va vazningizni kiriting — men sizga shaxsiy mashg'ulotlar
+        jadvali yaratib beraman.
+      </p>
+      <div id="ai-chat-body" class="ai-chat-body">
+        <div class="chat-bubble bot">
+          Salom! <i class="fa-solid fa-bolt"></i> Men sizning AI fitness murabbiyingizman.<br /><br />
+          📏 <strong>Qanday ishlaydi:</strong> Bo'yingiz 1XY sm bo'lsa, ideal
+          vazningiz XY kg bo'lishi kerak.<br />
+          Masalan: 170 sm → 70 kg, 165 sm → 65 kg<br /><br />
+          Iltimos, bo'yingiz va vazningizni yozing:<br />
+          <em>"Bo'yim 170, vaznim 85"</em>
+        </div>
+      </div>
+      <form id="ai-form" class="ai-form">
+        <input type="text" id="ai-input" placeholder="Masalan: Bo'yim 175, vaznim 80" required autocomplete="off" />
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+  <!-- Dashboard/Cabinet Overlay -->
+  <div class="panel-overlay" id="dashboard-panel">
+    <div class="dashboard-sidebar glass-panel">
+      <button class="close-panel" id="close-dashboard">&times;</button>
+
+      <!-- User Info -->
+      <div class="user-info">
+        <div class="avatar" id="user-avatar-display"><i class="fa-solid fa-user"></i>
+        </div>
+        <div>
+          <h4 id="user-name-display">Foydalanuvchi</h4>
+          <p class="text-sm text-gray" id="user-email-display">
+            Elektron pochta
+          </p>
+        </div>
+      </div>
+
+      <div id="sub-status" class="sub-box"></div>
+      <!-- Notification tugmasi -->
+      <button id="btn-enable-notifications" class="btn-notif-enable" onclick="enableNotifications()">
+        <i class="fa-solid fa-bell"></i> Mashg'ulot eslatmalarini yoqish
+      </button>
+
+      <!-- Bo'y/Vaznga qarab shaxsiy jadval (AI Murabbiy orqali to'ldiriladi) -->
+      <div id="personal-plan-box" class="personal-plan-box" style="display: none">
+        <h5><i class="fa-solid fa-clipboard-list"></i> <span id="plan-user-name"></span>ning shaxsiy jadvali</h5>
+        <div id="personal-plan-content"></div>
+      </div>
+
+      <div class="dash-stats">
+        <div class="stat-box">
+          <span class="val" id="booked-count">0</span>
+          <span class="label">Band darslar</span>
+        </div>
+        <div class="stat-box">
+          <span class="val">1 oy</span>
+          <span class="label">Jadval muddati</span>
+        </div>
+      </div>
+
+      <!-- Band qilingan mashg'ulotlar -->
+      <div class="profile-workouts-section">
+        <div class="profile-workouts-header">
+          <h5><i class="fa-solid fa-dumbbell"></i> Mening Mashg'ulotlarim</h5>
+          <span class="workouts-count" id="workouts-count-badge">0</span>
+        </div>
+        <div id="profile-workouts-list" class="profile-workouts-list">
+          <!-- schedule.js tomonidan to'ldiriladi -->
+        </div>
+      </div>
+
+      <!-- QR Kod -->
+      <div class="qr-code-box mt-3 text-center">
+        <p class="text-sm text-gray m-b">Zalga kirish QR kodi</p>
+        <svg width="90" height="90" viewBox="0 0 100 100">
+          <rect width="100" height="100" fill="#fff" rx="5" />
+          <path d="M10 10h30v30H10zm10 10h10v10H20z" fill="#0C1220" />
+          <path d="M60 10h30v30H60zm10 10h10v10H70z" fill="#0C1220" />
+          <path d="M10 60h30v30H10zm10 10h10v10H20z" fill="#0C1220" />
+          <path d="M50 50h10v10H50zM70 50h10v10H70zM50 70h10v10H50zM80 80h10v10H80zM60 60h10v10H60z" fill="#0C1220" />
+        </svg>
+      </div>
+
+      <a id="admin-panel-btn" href="admin.html" class="btn glow-btn w-100" hidden style="margin-top:12px">Admin
+        panel</a>
+      <div style="display: flex; gap: 10px; margin-top: auto">
+        <button id="btn-tg-receipt" class="btn btn-outline" style="flex: 1; font-size: 0.85rem">
+          <i class="fa-solid fa-paper-plane"></i> Telegram
+        </button>
+        <button class="btn btn-logout btn-outline" style="
+                flex: 1;
+                font-size: 0.85rem;
+                color: #ff3366;
+                border-color: #ff336644;
+              ">
+          Chiqish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie xabarnomasi -->
+  <div id="cookie-banner" class="cookie-banner" style="display: none">
+    <p>
+      <i class="fa-solid fa-cookie-bite"></i> Sayt tajribangizni yaxshilash va tizimga kirishni eslab qolish uchun
+      cookie'lardan foydalanamiz.
+    </p>
+    <button id="cookie-accept-btn" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.85rem">
+      Roziman
+    </button>
+  </div>
+
+  <script src="./js/schedule.js"></script>
+  <script src="./js/figures.js"></script>
+  <script src="./js/programs.js"></script>
+  <script type="module" src="./js/app.js"></script>
+  <script>
+    function enableNotifications() {
+      if (window.requestNotificationPermission) {
+        window.requestNotificationPermission().then((granted) => {
+          const btn = document.getElementById("btn-enable-notifications");
+          if (granted) {
+            if (btn) {
+              btn.textContent = " Eslatmalar yoqilgan";
+              btn.style.background = "rgba(255,106,61,0.1)";
+              btn.style.borderColor = "#FF6A3D";
+            }
+            if (window.showToast)
+              window.showToast(
+                " Eslatmalar muvaffaqiyatli yoqildi!",
+                "success",
+              );
+          } else {
+            if (window.showToast)
+              window.showToast(
+                " Ruxsat berilmadi. Brauzer sozlamalarini tekshiring.",
+                "error",
+              );
+          }
+        });
+      }
+    }
+  </script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var t = e.target, m = t.closest('.modal');
+      if (t.closest('.close-modal') && m) m.classList.remove('show');
+      else if (t.classList.contains('modal')) t.classList.remove('show');
+      var p = document.getElementById('dashboard-panel');
+      if (t.closest('#close-dashboard') || t === p) p.classList.remove('show');
+      document.body.style.overflow = document.querySelector('.modal.show,.panel-overlay.show') ? 'hidden' : '';
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { document.querySelectorAll('.modal.show,.panel-overlay.show').forEach(function (x) { x.classList.remove('show') }); document.body.style.overflow = ''; } });
+  </script>
+</body>
+
+</html>

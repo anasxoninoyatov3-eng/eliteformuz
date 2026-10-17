@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — EliteForm</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/theme.css" />
+    <style>
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 5%;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .stat {
+        padding: 16px;
+      }
+      .stat b {
+        display: block;
+        font: 800 1.8rem var(--font-heading);
+      }
+      .stat span {
+        color: var(--text-muted);
+        font-size: 0.82rem;
+      }
+      .panel {
+        padding: 0;
+        margin-bottom: 24px;
+        overflow-x: auto;
+      }
+      .panel h3 {
+        padding: 16px 16px 0;
+        font-size: 1.05rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 760px;
+      }
+      th,
+      td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.9rem;
+      }
+      th {
+        color: var(--text-muted);
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+      .pill {
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .pill.on {
+        background: rgba(124, 214, 150, 0.15);
+        color: #7cd696;
+      }
+      .pill.wait {
+        background: rgba(255, 106, 61, 0.15);
+        color: #ff6a3d;
+      }
+      .av {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        object-fit: cover;
+        vertical-align: middle;
+        margin-right: 10px;
+        background: #222;
+      }
+      .act button {
+        margin: 2px;
+        padding: 5px 10px;
+        font-size: 0.78rem;
+      }
+      #denied {
+        display: none;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="denied">
+      <h1>Kirish cheklangan</h1>
+      <p class="text-gray" id="denied-msg">Admin akkaunti bilan kiring.</p>
+      <button class="btn glow-btn" id="login">Google bilan kirish</button
+      ><a class="btn btn-outline" href="index.html">Saytga qaytish</a>
+    </div>
+    <div class="wrap" id="app" hidden>
+      <div class="top">
+        <h2>Admin panel</h2>
+        <div>
+          <span class="text-gray" id="me"></span>
+          <a class="btn btn-outline" href="index.html">Saytga qaytish</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat glass-panel">
+          <b id="s-users">0</b><span>Foydalanuvchilar</span>
+        </div>
+        <div class="stat glass-panel">
+          <b id="s-subs">0</b><span>Faol obunalar</span>
+        </div>
+        <div class="stat glass-panel">
+          <b id="s-req">0</b><span>Kutilayotgan so'rovlar</span>
+        </div>
+        <div class="stat glass-panel">
+          <b id="s-att">0</b><span>Bordi / Bormadi</span>
+        </div>
+      </div>
+      <div class="glass-panel panel">
+        <h3>Obuna so'rovlari</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Foydalanuvchi</th>
+              <th>Tarif</th>
+              <th>Narx</th>
+              <th>Sana</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="reqs"></tbody>
+        </table>
+      </div>
+      <div class="glass-panel panel">
+        <h3>Foydalanuvchilar</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Foydalanuvchi</th>
+              <th>Obuna</th>
+              <th>Ro'yxatdan o'tdi</th>
+              <th>Darslar</th>
+              <th>Obunani boshqarish</th>
+            </tr>
+          </thead>
+          <tbody id="users"></tbody>
+        </table>
+      </div>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        doc,
+        setDoc,
+        updateDoc,
+      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+      import { firebaseConfig, ADMIN_EMAIL } from "./js/firebase-config.js";
+      import { PLANS } from "./js/plans.js";
+      const $ = (id) => document.getElementById(id),
+        esc = (s) =>
+          String(s ?? "").replace(
+            /[&<>"]/g,
+            (c) =>
+              ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+          );
+      const fd = (ms) => new Date(ms).toLocaleDateString("uz-UZ");
+      const app = initializeApp(firebaseConfig),
+        db = getFirestore(app),
+        auth = getAuth(app);
+      $("login").onclick = () =>
+        signInWithPopup(auth, new GoogleAuthProvider());
+      onAuthStateChanged(auth, (u) => {
+        const ok = u && u.email === ADMIN_EMAIL;
+        $("app").hidden = !ok;
+        $("denied").style.display = ok ? "none" : "flex";
+        if (u && !ok) $("denied-msg").textContent = u.email + " admin emas.";
+        if (ok) {
+          $("me").textContent = u.email;
+          load();
+        }
+      });
+      async function grant(email, plan, days) {
+        const ref = doc(db, "gym_users", email);
+        const until = days ? Date.now() + days * 864e5 : 0;
+        await setDoc(
+          ref,
+          { subPlan: days ? plan : "", subUntil: until },
+          { merge: true },
+        );
+      }
+      async function load() {
+        const [us, bs, rs] = await Promise.all(
+          ["gym_users", "gym_bookings", "gym_sub_requests"].map((c) =>
+            getDocs(collection(db, c)),
+          ),
+        );
+        const users = us.docs.map((d) => d.data()),
+          books = bs.docs.map((d) => d.data()),
+          reqs = rs.docs
+            .map((d) => ({ id: d.id, ...d.data() }))
+            .filter((r) => r.status === "pending");
+        const active = users.filter((u) => u.subUntil > Date.now()).length;
+        $("s-users").textContent = users.length;
+        $("s-subs").textContent = active;
+        $("s-req").textContent = reqs.length;
+        $("s-att").textContent =
+          books.filter((b) => b.attendance === "attended").length +
+          " / " +
+          books.filter((b) => b.attendance === "missed").length;
+        $("reqs").innerHTML = reqs.length
+          ? reqs
+              .map(
+                (r) =>
+                  `<tr><td>${esc(r.name)}<br><small class="text-gray">${esc(r.email)}</small></td><td>${esc((PLANS[r.plan] || {}).name)}</td><td>${Number(r.price).toLocaleString("uz-UZ")}</td><td>${fd(r.createdAt)}</td><td class="act"><button class="btn glow-btn" data-ok="${esc(r.id)}">To'lov keldi, yoqish</button> <button class="btn btn-outline" data-no="${esc(r.id)}">Rad etish</button></td></tr>`,
+              )
+              .join("")
+          : `<tr><td colspan="5" class="text-gray">So'rovlar yo'q.</td></tr>`;
+        $("users").innerHTML = users.length
+          ? users
+              .map((u) => {
+                const on = u.subUntil > Date.now(),
+                  n = books.filter(
+                    (b) => b.userEmail === u.email && b.status !== "cancelled",
+                  ).length;
+                return `<tr><td>${u.picture ? `<img class="av" src="${esc(u.picture)}" alt="" referrerpolicy="no-referrer">` : '<span class="av" style="display:inline-block"></span>'}${esc(u.name || "Noma'lum")}<br><small class="text-gray">${esc(u.email)}</small></td>
+    <td>${on ? `<span class="pill on">${esc((PLANS[u.subPlan] || {}).name)} · ${fd(u.subUntil)} gacha</span>` : '<span class="pill">Yo\'q</span>'}</td><td>${esc(u.registeredAt || "-")}</td><td>${n}</td>
+    <td class="act">${Object.entries(PLANS)
+      .map(
+        ([k, p]) =>
+          `<button class="btn btn-outline" data-g="${esc(u.email)}|${k}">+${p.name}</button>`,
+      )
+      .join(
+        "",
+      )}<button class="btn btn-outline" data-g="${esc(u.email)}|">Bekor</button></td></tr>`;
+              })
+              .join("")
+          : `<tr><td colspan="5" class="text-gray">Foydalanuvchilar yo'q.</td></tr>`;
+        document.querySelectorAll("[data-g]").forEach(
+          (b) =>
+            (b.onclick = async () => {
+              const [e, k] = b.dataset.g.split("|");
+              await grant(e, k, k ? PLANS[k].days : 0);
+              load();
+            }),
+        );
+        document.querySelectorAll("[data-ok]").forEach(
+          (b) =>
+            (b.onclick = async () => {
+              const r = reqs.find((x) => x.id === b.dataset.ok);
+              await grant(r.email, r.plan, PLANS[r.plan].days);
+              await updateDoc(doc(db, "gym_sub_requests", r.id), {
+                status: "done",
+              });
+              load();
+            }),
+        );
+        document.querySelectorAll("[data-no]").forEach(
+          (b) =>
+            (b.onclick = async () => {
+              await updateDoc(doc(db, "gym_sub_requests", b.dataset.no), {
+                status: "rejected",
+              });
+              load();
+            }),
+        );
+      }
+    </script>
+  </body>
+</html>

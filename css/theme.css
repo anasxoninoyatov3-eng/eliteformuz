@@ -1,0 +1,83 @@
+/* Yengil, tekis uslub: kulrang fon, oq plitkalar, siqiq shrift, qora chiziqli rasmlar */
+:root{--bg-main:#E8E8E5;--bg-panel:#fff;--border-color:rgba(0,0,0,.14);--text-main:#111;--text-muted:#5A5A57;--accent-blue:#D9381E;--accent-violet:#111;--accent-green:#1F7A4D;--accent-red:#C4281C;--neon-violet:#111;--neon-blue:#D9381E;--font-heading:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif}
+body{background:var(--bg-main);color:var(--text-main);font-size:17px}
+.bg-glow{display:none}
+h1,h2,h3,h4,h5{text-transform:uppercase;letter-spacing:.01em;font-weight:700}
+.glass-panel,.tile{background:#fff;border:0;border-radius:0;box-shadow:none;backdrop-filter:none}
+.btn{border-radius:0;font:600 1rem var(--font-heading);text-transform:uppercase;letter-spacing:.06em;padding:.7rem 1.4rem}
+.btn-primary{background:#111;color:#fff}.btn-primary:hover{background:#333}
+.btn-outline{border:2px solid #111;color:#111}.btn-outline:hover{background:#111;color:#fff}
+.glow-btn{background:#D9381E;color:#fff;box-shadow:none}.glow-btn:hover{background:#b82c15;box-shadow:none}
+.btn:focus-visible,.pg-tab:focus-visible,.ex-btn:focus-visible,.week-tab:focus-visible{outline:3px solid #111;outline-offset:2px}
+.navbar{background:#E8E8E5;border-bottom:0}.navbar.scrolled{background:#E8E8E5;backdrop-filter:none;border-bottom:2px solid #111}
+.logo{font-size:1.5rem}.logo-icon,.logo .text-accent{color:#D9381E}
+.nav-links a{font:600 1.05rem var(--font-heading);text-transform:uppercase;letter-spacing:.06em;color:#111}.nav-links a:hover{color:#D9381E}
+.badge.glow-badge{background:#111;color:#fff;border:0;border-radius:0;box-shadow:none;font-weight:600}
+.hero{background:transparent}.hero-title{font-size:clamp(3rem,8vw,6rem);line-height:.95;letter-spacing:0}
+.text-glow{color:#D9381E;text-shadow:none}.hero-desc{color:#333;max-width:34rem}
+.section-title{font-size:clamp(2rem,4vw,3rem)}
+section{padding:72px 0}
+.hero-stats b{font-family:var(--font-heading)}
+.demo{padding:2rem;text-align:center}.demo-name{font:700 2.4rem var(--font-heading);text-transform:uppercase}.demo-tag{display:inline-block;background:#CFCFCB;padding:2px 14px;font:600 1rem var(--font-heading);text-transform:uppercase;letter-spacing:.08em;margin-top:.4rem}
+.fig{width:100%;max-width:260px;height:auto}.ground{stroke:#CFCFCB;stroke-width:1.5}
+.ex-fig{display:flex;justify-content:center;margin-bottom:.4rem}
+.ex-how{font-size:.92rem;color:#333;line-height:1.5;margin:.6rem 0}
+.ex-list{display:flex;flex-direction:column}
+.ex-btn{text-align:left;background:none;border:0;border-top:1px solid var(--border-color);padding:8px 0;font:500 1rem var(--font-body);color:#111;cursor:pointer}
+.ex-btn:not(.plain):hover,.ex-btn.on{color:#D9381E;font-weight:600}
+.pg-day.locked .ex{filter:blur(5px);user-select:none}
+.pg-lock{background:rgba(232,232,229,.6)}
+.pg-tab{border-radius:0;border:2px solid #111;color:#111;font:600 1rem var(--font-heading);text-transform:uppercase;letter-spacing:.06em}.pg-tab.active{background:#111;color:#fff}
+.pg-day li{border-color:var(--border-color)}
+.about-card:hover,.dir-card:hover{transform:none;box-shadow:none}
+.icon-wrap{border-radius:0;background:#E8E8E5;box-shadow:none;color:#111}
+.card-image-wrap svg rect{fill:#111}
+.link-btn{color:#D9381E}
+.sub-card.best{background:#fff;border:3px solid #D9381E}.sub-card .save{color:#1F7A4D}
+.sub-box{border-radius:0;background:#fff}.sub-box.on{border-color:#1F7A4D;color:#1F7A4D}.sub-box a{color:#D9381E}
+.week-block,.week-tab,.sched-slot,.time-badge,.profile-workout-card,.stat-box{border-radius:0}
+.week-block{background:#fff}.week-tab.active{background:#111;color:#fff;border-color:#111}
+.sched-slot{background:#F4F4F2!important}.slot-icon{display:none}.slot-name{color:#111!important}
+.time-badge{background:#E8E8E5;color:#111}
+.sched-row.sched-head .sched-cell{color:#111}
+.modal{background:rgba(17,17,17,.6);backdrop-filter:none}
+.dashboard-sidebar{background:#fff;color:#111;border-left:0;box-shadow:-6px 0 0 rgba(0,0,0,.12)}
+.user-info,.qr-code-box{background:#F4F4F2;border-color:transparent}
+.stat-box{background:#F4F4F2}.ai-chat-body{background:#F4F4F2}
+.chat-bubble.bot{background:#fff;border:1px solid var(--border-color);color:#111}.chat-bubble.user{background:#111;color:#fff}
+.ai-form input,.input-group input{background:#fff;color:#111;border:2px solid #111;border-radius:0}.ai-form button{background:#111;border-radius:0}
+.close-modal,.close-panel{color:#111}
+.footer{background:#111;color:#fff;margin-top:0}.footer p,.footer a,.footer h4{color:#ddd}.footer-bottom{border-color:#333}
+.cookie-banner,.attendance-confirm-box{background:#fff;color:#111;border-radius:0;border:2px solid #111}
+.panel,.stat{border-radius:0}
+th{color:#111!important}.pill{background:#E8E8E5;color:#111}.pill.on{background:#D6EEDD;color:#1F7A4D}.pill.wait{background:#FBDDD6;color:#D9381E}
+table td,table th{border-color:var(--border-color)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade-in{opacity:1;transform:none}}
+/* --- Tuzatishlar: grid va oraliqlar --- */
+i.fa-solid,i.fa-brands{margin-right:.4em}
+.icon-wrap i,.social-link i,.logo i,.mobile-menu-btn i,.avatar i,.link-btn i{margin:0}
+.link-btn i{margin-left:.4em}.icon-wrap i{font-size:1.6rem}.logo i{font-size:1.3rem}.logo{gap:10px}
+.nav-links a,.logo{white-space:nowrap}.nav-actions .btn{padding:.55rem 1.1rem}
+.hero-stats{display:flex;gap:2.4rem;margin-top:2rem;flex-wrap:wrap}
+.hero-stats b{display:block;font:700 2.2rem var(--font-heading);line-height:1}
+.hero-stats span{display:block;color:var(--text-muted);font-size:.9rem;margin-top:4px}
+.about-grid,.cards-grid{gap:16px}.about-card{padding:2rem}.card-content{padding:1.6rem}
+.schedule-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem}
+.legend-item{display:flex;align-items:center;gap:6px}.leg-dot{width:10px;height:10px;display:inline-block}
+.slot-icon{display:inline-block;font-size:1rem;color:#111}.slot-icon i{margin:0}
+.slot-trainer i,.pwc-time i,.pwc-trainer i{margin-right:.3em}
+.sub-grid,.pg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.sub-grid{align-items:stretch}
+.sub-card{padding:2rem;display:flex;flex-direction:column;gap:.5rem}
+.sub-card h4{font-size:1.6rem}
+.sub-card .price{font:700 3.2rem var(--font-heading);line-height:1}
+.sub-card .price span{font:500 1rem var(--font-body);color:var(--text-muted)}
+.sub-card .save{min-height:1.5em;margin-bottom:1rem}.sub-card .btn{margin-top:auto}
+.sub-perks{max-width:760px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.6rem 2rem}
+.sub-perks li::before{content:"\f00c";font:900 .85rem "Font Awesome 6 Free";color:#1F7A4D;margin-right:10px}
+.pg-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}.pg-tab{padding:8px 20px;cursor:pointer;background:transparent}
+.pg-meta{color:var(--text-muted);margin-bottom:1.2rem}
+.pg-day{padding:1.5rem;position:relative;overflow:hidden}.pg-day h4{font-size:1.3rem;margin-bottom:.8rem}
+.pg-lock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.sub-box{padding:12px 14px;border:1px solid var(--border-color);margin-bottom:12px;font-size:.9rem}
+.btn-notif-enable{background:#fff;border:2px solid #111;color:#111;border-radius:0}

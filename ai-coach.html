@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Fitness Murabbiy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="ai-coach.css" />
+  </head>
+  <body>
+    <div class="ai-container">
+      <header class="ai-header">
+        <div class="ai-avatar">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+            <path
+              d="M2 17L12 22L22 17"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 12L12 17L22 12"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="ai-title-wrap">
+          <h2>AI Fitness Murabbiy</h2>
+          <p>Maqsadingizga mos mashq va taomnoma</p>
+        </div>
+      </header>
+
+      <div class="chat-container" id="chat-box">
+        <div class="message ai-message">
+          <div class="msg-content">
+            Salom! Men sizning shaxsiy AI fitness murabbiyingizman. Ozish yoki
+            semirish niyati bormi? Iltimos, maqsadlaringiz, yoshingiz, vazningiz
+            va bo'yingiz haqida ma'lumot bering. Men sizga maxsus dastur tuzib
+            beraman!
+            <button
+              class="listen-btn"
+              onclick="speakText(this.parentElement.innerText)"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <path
+                  d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+                ></path>
+              </svg>
+              Listen
+            </button>
+          </div>
+        </div>
+        <!-- Dinamik xabarlar shu yerga tushadi -->
+      </div>
+
+      <div class="input-area">
+        <textarea
+          id="user-input"
+          placeholder="O'z ma'lumotlaringizni yozing yoki maqsadni kiriting..."
+          rows="1"
+        ></textarea>
+        <button id="send-btn" class="send-btn" aria-label="Yuborish">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 2L11 13"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M22 2L15 22L11 13L2 9L22 2Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- AI Script -->
+    <script src="./js/ai-coach.js"></script>
+  </body>
+</html>
